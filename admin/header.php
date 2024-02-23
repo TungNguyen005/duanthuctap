@@ -119,7 +119,7 @@ if(!isset($_SESSION['user'])) {
                             <li><a href="shipping-cost.php"><i class="fa fa-circle-o"></i>Phí vận chuyển</a></li>
                             <li><a href="top-category.php"><i class="fa fa-circle-o"></i>Mặt hàng</a></li>
                             <li><a href="mid-category.php"><i class="fa fa-circle-o"></i>Hãng</a></li>
-                            <li><a href="end-category.php"><i class="fa fa-circle-o"></i>Tên sản phẩm</a></li>
+                            <li><a href="end-category.php"><i class="fa fa-circle-o"></i>Dòng sản phẩm</a></li>
                         </ul>
                     </li>
 

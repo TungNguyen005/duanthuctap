@@ -209,7 +209,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $total_end_category; ?></h3>
   
-					<p>Sản Phẩm</p>
+					<p>Dòng Sản Phẩm</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-arrow-down-b"></i>

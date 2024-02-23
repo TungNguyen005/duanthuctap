@@ -103,7 +103,7 @@ foreach ($result as $row) {
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Tên hãng saen phẩm<span>*</span></label>
+                    <label for="" class="col-sm-3 control-label">Tên hãng sản phẩm<span>*</span></label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="mcat_name" value="<?php echo $mcat_name; ?>">
                     </div>
@@ -139,7 +139,7 @@ foreach ($result as $row) {
                 Bạn có chắc chắn muốn xóa mục này?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">hủy</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
                 <a class="btn btn-danger btn-ok">Xóa</a>
             </div>
         </div>

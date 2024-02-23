@@ -16,7 +16,7 @@ if(isset($_POST['form1'])) {
 
     if(empty($_POST['ecat_name'])) {
         $valid = 0;
-        $error_message .= "Tên sản phẩm không được để trống<br>";
+        $error_message .= "Dòng sản phẩm không được để trống<br>";
     }
 
     if($valid == 1) {
@@ -25,14 +25,14 @@ if(isset($_POST['form1'])) {
 		$statement = $pdo->prepare("INSERT INTO tbl_end_category (ecat_name,mcat_id) VALUES (?,?)");
 		$statement->execute(array($_POST['ecat_name'],$_POST['mcat_id']));
 	
-    	$success_message = 'Sản phẩm được thêm thành công.';
+    	$success_message = 'Dòng sản phẩm được thêm thành công.';
     }
 }
 ?>
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Thêm sản phẩm</h1>
+		<h1>Thêm dòng sản phẩm</h1>
 	</div>
 	<div class="content-header-right">
 		<a href="end-category.php" class="btn btn-primary btn-sm">Xem toàn bộ</a>
@@ -92,7 +92,7 @@ if(isset($_POST['form1'])) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Tên sản phẩm<span>*</span></label>
+							<label for="" class="col-sm-3 control-label">Tên dòng sản phẩm<span>*</span></label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="ecat_name">
 							</div>

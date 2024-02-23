@@ -2,7 +2,7 @@
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Xem sản phẩm</h1>
+		<h1>Xem dòng sản phẩm</h1>
 	</div>
 	<div class="content-header-right">
 		<a href="end-category-add.php" class="btn btn-primary btn-sm">Thêm mới</a>
@@ -23,9 +23,9 @@
 			<thead>
 			    <tr>
 			        <th>#</th>
-			        <th>Tên danh mục cấp độ cuối</th>
-                    <th>Tên danh mục cấp trung</th>
-                    <th>Tên danh mục cấp cao nhất</th>
+			        <th>Tên dòng sản phẩm</th>
+                    <th>Tên hãng sản phẩm</th>
+                    <th>Tên mặt hàng</th>
 			        <th>Hoạt động</th>
 			    </tr>
 			</thead>
@@ -76,7 +76,7 @@
             </div>
             <div class="modal-body">
                 <p>Bạn có chắc chắn muốn xóa mục này?</p>
-                <p style="color:red;">Hãy cẩn thận! Tất cả các sản phẩm thuộc danh mục sản phẩm này sẽ bị xóa khỏi tất cả các bảng như bảng đặt hàng, bảng thanh toán, bảng kích thước, bảng màu, bảng xếp hạng,...</p>
+                <p style="color:red;">Hãy cẩn thận! Tất cả các sản phẩm thuộc danh mục dòng sản phẩm này sẽ bị xóa khỏi tất cả các bảng như bảng đặt hàng, bảng thanh toán, bảng kích thước, bảng màu, bảng xếp hạng,...</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>

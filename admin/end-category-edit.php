@@ -6,17 +6,17 @@ if(isset($_POST['form1'])) {
 
     if(empty($_POST['tcat_id'])) {
         $valid = 0;
-        $error_message .= "Bạn phải chọn danh mục cấp cao nhất<br>";
+        $error_message .= "Bạn phải chọn mặt hàng<br>";
     }
 
     if(empty($_POST['mcat_id'])) {
         $valid = 0;
-        $error_message .= "Bạn phải chọn một danh mục cấp trung<br>";
+        $error_message .= "Bạn phải chọn hãng sản phẩm<br>";
     }
 
     if(empty($_POST['ecat_name'])) {
         $valid = 0;
-        $error_message .= "Tên danh mục cấp cuối không được để trống<br>";
+        $error_message .= "Dòng sản phẩm không được để trống<br>";
     }
 
     if($valid == 1) {    	
@@ -24,7 +24,7 @@ if(isset($_POST['form1'])) {
 		$statement = $pdo->prepare("UPDATE tbl_end_category SET ecat_name=?,mcat_id=? WHERE ecat_id=?");
 		$statement->execute(array($_POST['ecat_name'],$_POST['mcat_id'],$_REQUEST['id']));
 
-    	$success_message = 'Danh mục cấp độ cuối được cập nhật thành công.';
+    	$success_message = 'Dòng sản phẩm được cập nhật thành công.';
     }
 }
 ?>
@@ -54,7 +54,7 @@ if(!isset($_REQUEST['id'])) {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Chỉnh sửa danh mục cấp độ cuối</h1>
+		<h1>Chỉnh sửa dòng sản phẩm</h1>
 	</div>
 	<div class="content-header-right">
 		<a href="end-category.php" class="btn btn-primary btn-sm">Xem toàn bộ</a>
@@ -97,10 +97,10 @@ foreach ($result as $row) {
 
             <div class="box-body">
                 <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Tên danh mục cấp cao nhất<span>*</span></label>
+                    <label for="" class="col-sm-3 control-label">Tên mặt hàng<span>*</span></label>
                     <div class="col-sm-4">
                         <select name="tcat_id" class="form-control select2 top-cat">
-                            <option value="">Chọn danh mục cấp cao nhất</option>
+                            <option value="">Chọn mặt hàng</option>
                             <?php
                             $statement = $pdo->prepare("SELECT * FROM tbl_top_category ORDER BY tcat_name ASC");
                             $statement->execute();
@@ -115,10 +115,10 @@ foreach ($result as $row) {
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Tên danh mục cấp trung<span>*</span></label>
+                    <label for="" class="col-sm-3 control-label">Tên hãng sản phẩm<span>*</span></label>
                     <div class="col-sm-4">
                         <select name="mcat_id" class="form-control select2 mid-cat">
-                            <option value="">Chọn danh mục cấp trung</option>
+                            <option value="">Chọn hãng sản phẩm</option>
                             <?php
                             $statement = $pdo->prepare("SELECT * FROM tbl_mid_category WHERE tcat_id = ? ORDER BY mcat_name ASC");
                             $statement->execute(array($tcat_id));
@@ -133,7 +133,7 @@ foreach ($result as $row) {
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="" class="col-sm-3 control-label">Tên danh mục cấp độ cuối<span>*</span></label>
+                    <label for="" class="col-sm-3 control-label">Tên dòng sản phẩm<span>*</span></label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="ecat_name" value="<?php echo $ecat_name; ?>">
                     </div>

@@ -8,16 +8,16 @@ if(isset($_POST['form1'])) {
 
     if(empty($_POST['country_id'])) {
         $valid = 0;
-        $error_message .= 'You must have to select a country.<br>';
+        $error_message .= 'Bạn phải chọn một thành phố.<br>';
     }
 
     if($_POST['amount'] == '') {
         $valid = 0;
-        $error_message .= 'Amount can not be empty.<br>';
+        $error_message .= 'Giá tiền không được để trống.<br>';
     } else {
         if(!is_numeric($_POST['amount'])) {
             $valid = 0;
-            $error_message .= 'You must have to enter a valid number.<br>';
+            $error_message .= 'Bạn phải nhập một số hợp lệ.<br>';
         }
     }
 
@@ -25,7 +25,7 @@ if(isset($_POST['form1'])) {
         $statement = $pdo->prepare("INSERT INTO tbl_shipping_cost (country_id,amount) VALUES (?,?)");
         $statement->execute(array($_POST['country_id'],$_POST['amount']));
 
-        $success_message = 'Shipping cost is added successfully.';
+        $success_message = 'Đã thêm chi phí vận chuyển thành công.';
     }
 
 }
@@ -36,11 +36,11 @@ if(isset($_POST['form2'])) {
 
     if($_POST['amount'] == '') {
         $valid = 0;
-        $error_message .= 'Amount can not be empty.<br>';
+        $error_message .= 'Giá tiền không được để trống.<br>';
     } else {
         if(!is_numeric($_POST['amount'])) {
             $valid = 0;
-            $error_message .= 'You must have to enter a valid number.<br>';
+            $error_message .= 'Bạn phải nhập một số hợp lệ.<br>';
         }
     }
 
@@ -58,7 +58,7 @@ if(isset($_POST['form2'])) {
 
 <section class="content-header">
     <div class="content-header-left">
-        <h1>Add Shipping Cost</h1>
+        <h1>Thêm chi phí vận chuyển</h1>
     </div>
 </section>
 
@@ -88,10 +88,10 @@ if(isset($_POST['form2'])) {
                 <div class="box box-info">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">Select Country <span>*</span></label>
+                            <label for="" class="col-sm-2 control-label">Chọn thành phố<span>*</span></label>
                             <div class="col-sm-4">
                                 <select name="country_id" class="form-control select2">
-                                    <option value="">Select a country</option>
+                                    <option value="">Chọn một thành phố</option>
                                     <?php
                                     $statement = $pdo->prepare("SELECT * FROM tbl_country ORDER BY country_name ASC");
                                     $statement->execute();
@@ -115,7 +115,7 @@ if(isset($_POST['form2'])) {
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">Amount <span>*</span></label>
+                            <label for="" class="col-sm-2 control-label">Giá tiền<span>*</span></label>
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="amount">
                             </div>
@@ -123,7 +123,7 @@ if(isset($_POST['form2'])) {
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label"></label>
                             <div class="col-sm-6">
-                                <button type="submit" class="btn btn-success pull-left" name="form1">Add</button>
+                                <button type="submit" class="btn btn-success pull-left" name="form1">Thêm</button>
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@ if(isset($_POST['form2'])) {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View Shipping Costs</h1>
+		<h1>Xem chi phí vận chuyển</h1>
 	</div>
 </section>
 
@@ -159,9 +159,9 @@ if(isset($_POST['form2'])) {
 			<thead>
 			    <tr>
 			        <th>#</th>
-			        <th>Country Name</th>
+			        <th>Tên thành phố</th>
                     <th>Country Amount</th>
-			        <th>Action</th>
+			        <th>hoạt động</th>
 			    </tr>
 			</thead>
             <tbody>
@@ -182,8 +182,8 @@ if(isset($_POST['form2'])) {
 	                    <td><?php echo $row['country_name']; ?></td>
                         <td><?php echo $row['amount']; ?></td>
 	                    <td>
-	                        <a href="shipping-cost-edit.php?id=<?php echo $row['shipping_cost_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
-	                        <a href="#" class="btn btn-danger btn-xs" data-href="shipping-cost-delete.php?id=<?php echo $row['shipping_cost_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>
+	                        <a href="shipping-cost-edit.php?id=<?php echo $row['shipping_cost_id']; ?>" class="btn btn-primary btn-xs">Sửa</a>
+	                        <a href="#" class="btn btn-danger btn-xs" data-href="shipping-cost-delete.php?id=<?php echo $row['shipping_cost_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
 	                    </td>
 	                </tr>
             		<?php
