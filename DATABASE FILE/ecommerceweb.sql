@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 22, 2024 lúc 05:14 PM
+-- Thời gian đã tạo: Th2 23, 2024 lúc 06:06 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -384,7 +384,7 @@ INSERT INTO `tbl_customer` (`cust_id`, `cust_name`, `cust_cname`, `cust_email`, 
 (8, 'Benjamin B. Louque', 'none', 'benjamin@mail.com', '7777889955', 230, '32 Bridge Street', 'Tulsa', 'OK', '74220', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '5f4dcc3b5aa765d61d8327deb882cf99', '5a0e096368f9669508af7b7203382b07', '2022-03-20 10:36:31', '1647797791', 1),
 (9, 'Joe K. Richardson', 'none', 'joe@mail.com', '4444445555', 230, '17 Derek Drive', 'Youngstown', 'OH', '44500', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '5f4dcc3b5aa765d61d8327deb882cf99', 'e74ac0178d7833988d4b1625c42ba26e', '2022-03-20 10:37:18', '1647797838', 1),
 (10, 'Will Williams', 'Test Company', 'williams@mail.com', '7410000000', 230, '39 Marcus Street', 'Anniston', 'AL', '37207', 'Will Williams', 'Test Company', '7410000000', 230, '39 Marcus Street', 'Anniston', 'AL', '37207', 'Will Williams', 'Test Company', '7410000000', 230, '39 Marcus Street', 'Anniston', 'AL', '37207', '5f4dcc3b5aa765d61d8327deb882cf99', '941c9265fb920f691cf01b12a15f80f8', '2022-03-20 11:15:59', '1647800159', 1),
-(11, 'Duc Tung', 'PT', 'tungct2k2@gmail.com', '0335926702', 237, 'PT', 'PT', '1', '1', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '202cb962ac59075b964b07152d234b70', '0e56abe7cd4466d05d2d16e8a645e086', '2024-02-22 08:28:46', '1708608526', 1);
+(11, 'Duc Tung', 'PT', 'tungct2k2@gmail.com', '0335926702', 237, 'PT', 'PT', '1', '1', 'Duc', 'PT', '0335926702', 9, 'hvh', 'vh', 'hvvjh', '123', 'du', 'p', 't', 16, 'hvj', 'hvh', 'hvhjv', '124', '202cb962ac59075b964b07152d234b70', '0e56abe7cd4466d05d2d16e8a645e086', '2024-02-22 08:28:46', '1708608526', 1);
 
 -- --------------------------------------------------------
 
@@ -399,6 +399,13 @@ CREATE TABLE `tbl_customer_message` (
   `order_detail` text NOT NULL,
   `cust_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_customer_message`
+--
+
+INSERT INTO `tbl_customer_message` (`customer_message_id`, `subject`, `message`, `order_detail`, `cust_id`) VALUES
+(9, 'bj', 'gc', '\n            Tên khách hàng: Duc Tung<br>\n            Email khách hàng: tungct2k2@gmail.com<br>\n            Phương thức thanh toán: Bank Deposit<br>\n            Ngày thanh toán: 2024-02-23 14:33:25<br>\n            Chi tiết thanh toán: <br><br>\n            Hóa đơn: 279<br>\n            Tình trạng thanh toán: Pending<br>\n            Tình trạng giao hàng: Pending<br>\n            ID hóa đơn: 1708673605<br>\n            \n            <br><b><u>Mặt hàng sản phẩm 1</u></b><br>\n            Tên sản phẩm: Amazfit GTS 3 Smart Watch for Android iPhone<br>\n            Kích thước: Free Size<br>\n            Màu: Black<br>\n            Số lượng: 1<br>\n            Đơn giá: 179<br>\n            ', 11);
 
 -- --------------------------------------------------------
 
@@ -513,11 +520,11 @@ CREATE TABLE `tbl_faq` (
 --
 
 INSERT INTO `tbl_faq` (`faq_id`, `faq_title`, `faq_content`) VALUES
-(1, 'How to find an item?', '<h3 class=\"checkout-complete-box font-bold txt16\" style=\"box-sizing: inherit; text-rendering: optimizeLegibility; margin: 0.2rem 0px 0.5rem; padding: 0px; line-height: 1.4; background-color: rgb(250, 250, 250);\"><font color=\"#222222\" face=\"opensans, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif\"><span style=\"font-size: 15.7143px;\">We have a wide range of fabulous products to choose from.</span></font></h3><h3 class=\"checkout-complete-box font-bold txt16\" style=\"box-sizing: inherit; text-rendering: optimizeLegibility; margin: 0.2rem 0px 0.5rem; padding: 0px; line-height: 1.4; background-color: rgb(250, 250, 250);\"><span style=\"font-size: 15.7143px; color: rgb(34, 34, 34); font-family: opensans, \"Helvetica Neue\", Helvetica, Helvetica, Arial, sans-serif;\">Tip 1: If you\'re looking for a specific product, use the keyword search box located at the top of the site. Simply type what you are looking for, and prepare to be amazed!</span></h3><h3 class=\"checkout-complete-box font-bold txt16\" style=\"box-sizing: inherit; text-rendering: optimizeLegibility; margin: 0.2rem 0px 0.5rem; padding: 0px; line-height: 1.4; background-color: rgb(250, 250, 250);\"><font color=\"#222222\" face=\"opensans, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif\"><span style=\"font-size: 15.7143px;\">Tip 2: If you want to explore a category of products, use the Shop Categories in the upper menu, and navigate through your favorite categories where we\'ll feature the best products in each.</span></font><br><br></h3>\r\n'),
-(2, 'What is your return policy?', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; font-size: 14px; text-align: center;\">You have 15 days to make a refund request after your order has been delivered.</span><br></p>\r\n'),
-(3, ' I received a defective/damaged item, can I get a refund?', '<p>In case the item you received is damaged or defective, you could return an item in the same condition as you received it with the original box and/or packaging intact. Once we receive the returned item, we will inspect it and if the item is found to be defective or damaged, we will process the refund along with any shipping fees incurred.<br></p>\r\n'),
-(4, 'When are ‘Returns’ not possible?', '<p class=\"a  \" style=\"box-sizing: inherit; text-rendering: optimizeLegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px; font-size: 14px; color: rgb(10, 10, 10); font-family: opensans, &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; background-color: rgb(250, 250, 250);\">There are a few certain scenarios where it is difficult for us to support returns:</p><ol style=\"box-sizing: inherit; line-height: 1.6; margin-right: 0px; margin-bottom: 0px; margin-left: 1.25rem; padding: 0px; list-style-position: outside; color: rgb(10, 10, 10); font-family: opensans, &quot;Helvetica Neue&quot;, Helvetica, Helvetica, Arial, sans-serif; font-size: 14px; background-color: rgb(250, 250, 250);\"><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Return request is made outside the specified time frame, of 15 days from delivery.</li><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Product is used, damaged, or is not in the same condition as you received it.</li><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Specific categories like innerwear, lingerie, socks and clothing freebies etc.</li><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Defective products which are covered under the manufacturer\'s warranty.</li><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Any consumable item which has been used or installed.</li><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Products with tampered or missing serial numbers.</li><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Anything missing from the package you\'ve received including price tags, labels, original packing, freebies and accessories.</li><li style=\"box-sizing: inherit; margin: 0px; padding: 0px; font-size: inherit;\">Fragile items, hygiene related items.</li></ol>\r\n'),
-(5, 'What are the items that cannot be returned?', '<p>The items that can not be returned are:</p><p>Clearance items clearly marked as such and displaying a No-Return Policy<br></p><p>When the offer notes states so specifically are items that cannot be returned.</p><p>Items that fall into the below product types-</p><ul><li>Underwear</li><li>Lingerie</li><li>Socks</li><li>Software</li><li>Music albums</li><li>Books</li><li>Swimwear</li><li>Beauty &amp; Fragrances</li><li>Hosiery</li></ul><p>Also, any consumable items that are used or installed cannot be returned. As outlined in consumer Protection Rights and concerning section on non-returnable items<br></p>');
+(1, 'Làm thế nào để tìm thấy một sản phẩm?', '<p style=\"box-sizing: inherit; text-rendering: optimizeLegibility; margin: 0.2rem 0px 0.5rem; padding: 0px; line-height: 1.4; background-color: rgb(250, 250, 250);\"><font color=\"#222222\" face=\"opensans, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif\"><span style=\"font-size: 15.7143px;\">Chúng tôi có một loạt các sản phẩm tuyệt vời để lựa chọn.<br></span></font><font color=\"#222222\" face=\"opensans, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif\"><span style=\"font-size: 15.7143px;\">Mẹo 1: Nếu bạn đang tìm kiếm một sản phẩm cụ thể, hãy sử dụng hộp tìm kiếm từ khóa nằm ở đầu trang. Đơn giản chỉ cần gõ những gì bạn đang tìm kiếm và chuẩn bị ngạc nhiên!</span></font></p><p style=\"box-sizing: inherit; text-rendering: optimizeLegibility; margin: 0.2rem 0px 0.5rem; padding: 0px; line-height: 1.4; background-color: rgb(250, 250, 250);\"><font color=\"#222222\" face=\"opensans, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif\"><span style=\"font-size: 15.7143px;\">Mẹo 2: Nếu bạn muốn khám phá một danh mục sản phẩm, hãy sử dụng Danh mục cửa hàng ở menu phía trên và điều hướng qua các danh mục yêu thích của bạn, nơi chúng tôi sẽ giới thiệu những sản phẩm tốt nhất trong mỗi danh mục.</span></font></p>\r\n'),
+(2, 'Chính sách hoàn trả là gì?', '<p><span style=\"color: rgb(10, 10, 10); font-family: opensans, \" helvetica=\"\" neue\",=\"\" helvetica,=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" text-align:=\"\" center;\"=\"\">Bạn có 15 ngày để thực hiện yêu cầu hoàn tiền sau khi đơn hàng của bạn đã được giao.</span><br></p>\r\n'),
+(3, 'Tôi đã nhận được một mặt hàng bị lỗi/hư hỏng, tôi có thể được hoàn lại tiền không?', '<p>Trong trường hợp mặt hàng bạn nhận được bị hư hỏng hoặc bị lỗi, bạn có thể trả lại mặt hàng trong tình trạng tương tự như khi bạn nhận được nó với hộp và/hoặc bao bì ban đầu còn nguyên vẹn. Sau khi nhận được hàng trả lại, chúng tôi sẽ kiểm tra và nếu phát hiện mặt hàng đó bị lỗi hoặc hư hỏng, chúng tôi sẽ xử lý hoàn tiền cùng với mọi phí vận chuyển phát sinh.<br></p>\r\n'),
+(4, 'Khi nào thì việc ', '<p class=\"a  \" style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\" helvetica=\"\" neue\",=\"\" helvetica,=\"\" arial,=\"\" sans-serif;=\"\" background-color:=\"\" rgb(250,=\"\" 250,=\"\" 250);\"=\"\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Có một số trường hợp nhất định mà chúng tôi khó hỗ trợ việc trả lại hàng:</span></font></p><p class=\"a  \" style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\" helvetica=\"\" neue\",=\"\" helvetica,=\"\" arial,=\"\" sans-serif;=\"\" background-color:=\"\" rgb(250,=\"\" 250,=\"\" 250);\"=\"\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Yêu cầu trả lại được thực hiện ngoài khung thời gian quy định, trong vòng 15 ngày kể từ ngày giao hàng.</span></font></p><ol><li style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Sản phẩm đã qua sử dụng, bị hư hỏng hoặc không ở tình trạng như lúc bạn nhận được.</span></font></li><li style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Sản phẩm bị lỗi được bảo hành theo chế độ bảo hành của nhà sản xuất.</span></font></li><li style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Bất kỳ vật tư tiêu hao nào đã được sử dụng hoặc lắp đặt.</span></font></li><li style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Sản phẩm bị giả mạo hoặc thiếu số serial.</span></font></li><li style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Bất cứ thứ gì còn thiếu trong gói hàng bạn nhận được, bao gồm thẻ giá, nhãn mác, bao bì gốc, quà tặng miễn phí và phụ kiện.</span></font></li><li style=\"box-sizing: inherit; text-rendering: optimizelegibility; line-height: 1.6; margin-bottom: 0.714286rem; padding: 0px;\"><font color=\"#0a0a0a\"><span style=\"font-size: 14px;\">Các mặt hàng dễ vỡ, các mặt hàng liên quan đến vệ sinh.</span></font></li></ol>\r\n'),
+(5, 'Các mặt hàng không thể được trả lại là gì?', '<p>Các mặt hàng không thể trả lại là:</p><ol><li>Các mặt hàng thanh lý được đánh dấu rõ ràng như vậy và hiển thị Chính sách không hoàn trả.</li><li>Khi ghi chú ưu đãi nêu cụ thể những mặt hàng không thể trả lại.</li><li>Ngoài ra, bất kỳ vật tư tiêu hao nào đã được sử dụng hoặc lắp đặt đều không thể được trả lại. Như đã nêu trong Quyền bảo vệ người tiêu dùng và phần liên quan về các mặt hàng không thể trả lại.</li></ol>');
 
 -- --------------------------------------------------------
 
@@ -536,169 +543,169 @@ CREATE TABLE `tbl_language` (
 --
 
 INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
-(1, 'Currency', '$'),
-(2, 'Search Product', 'Search Product'),
-(3, 'Search', 'Search'),
-(4, 'Submit', 'Submit'),
-(5, 'Update', 'Update'),
-(6, 'Read More', 'Read More'),
-(7, 'Serial', 'Serial'),
-(8, 'Photo', 'Photo'),
-(9, 'Login', 'Login'),
-(10, 'Customer Login', 'Customer Login'),
-(11, 'Click here to login', 'Click here to login'),
-(12, 'Back to Login Page', 'Back to Login Page'),
-(13, 'Logged in as', 'Logged in as'),
-(14, 'Logout', 'Logout'),
-(15, 'Register', 'Register'),
-(16, 'Customer Registration', 'Customer Registration'),
-(17, 'Registration Successful', 'Registration Successful'),
-(18, 'Cart', 'Cart'),
-(19, 'View Cart', 'View Cart'),
-(20, 'Update Cart', 'Update Cart'),
-(21, 'Back to Cart', 'Back to Cart'),
-(22, 'Checkout', 'Checkout'),
-(23, 'Proceed to Checkout', 'Proceed to Checkout'),
-(24, 'Orders', 'Orders'),
-(25, 'Order History', 'Order History'),
-(26, 'Order Details', 'Order Details'),
-(27, 'Payment Date and Time', 'Payment Date and Time'),
-(28, 'Transaction ID', 'Transaction ID'),
-(29, 'Paid Amount', 'Paid Amount'),
-(30, 'Payment Status', 'Payment Status'),
-(31, 'Payment Method', 'Payment Method'),
-(32, 'Payment ID', 'Payment ID'),
-(33, 'Payment Section', 'Payment Section'),
-(34, 'Select Payment Method', 'Select Payment Method'),
-(35, 'Select a Method', 'Select a Method'),
+(1, 'Currency', 'đ'),
+(2, 'Search Product', 'Tìm kiếm sản phẩm'),
+(3, 'Search', 'Tìm kiếm'),
+(4, 'Submit', 'Gửi'),
+(5, 'Update', 'Cập nhật'),
+(6, 'Read More', 'Đọc thêm'),
+(7, 'Serial', 'Số seri'),
+(8, 'Photo', 'Ảnh'),
+(9, 'Login', 'Đăng nhập'),
+(10, 'Customer Login', 'Đăng nhập khách hàng'),
+(11, 'Click here to login', 'Nhấn vào đây để đăng nhập'),
+(12, 'Back to Login Page', 'Quay lại trang đăng nhập'),
+(13, 'Logged in as', 'Đăng nhập với tên'),
+(14, 'Logout', 'Đăng xuất'),
+(15, 'Register', 'Đăng kí'),
+(16, 'Customer Registration', 'Đăng ký khách hàng'),
+(17, 'Registration Successful', 'Đăng ký thành công'),
+(18, 'Cart', 'Giỏ hàng'),
+(19, 'View Cart', 'Xem giỏ hàng'),
+(20, 'Update Cart', 'Cập nhật giỏ hàng'),
+(21, 'Back to Cart', 'Quay lại giỏ hàng'),
+(22, 'Checkout', 'Kiểm tra'),
+(23, 'Proceed to Checkout', 'Tiến hành kiểm tra'),
+(24, 'Orders', 'Đơn đặt hàng'),
+(25, 'Order History', 'Lịch sử đơn hàng'),
+(26, 'Order Details', 'Chi tiết đặt hàng'),
+(27, 'Payment Date and Time', 'Ngày và giờ thanh toán'),
+(28, 'Transaction ID', 'ID giao dịch'),
+(29, 'Paid Amount', 'Hóa đơn'),
+(30, 'Payment Status', 'Tình trạng thanh toán'),
+(31, 'Payment Method', 'Phương thức thanh toán'),
+(32, 'Payment ID', 'ID thanh toán'),
+(33, 'Payment Section', 'Phần thanh toán'),
+(34, 'Select Payment Method', 'Chọn phương thức thanh toán'),
+(35, 'Select a Method', 'Chọn một phương thức'),
 (36, 'PayPal', 'PayPal'),
 (37, 'Stripe', 'Stripe'),
-(38, 'Bank Deposit', 'Bank Deposit'),
-(39, 'Card Number', 'Card Number'),
+(38, 'Bank Deposit', 'Thẻ ngân hàng'),
+(39, 'Card Number', 'Số thẻ'),
 (40, 'CVV', 'CVV'),
-(41, 'Month', 'Month'),
-(42, 'Year', 'Year'),
-(43, 'Send to this Details', 'Send to this Details'),
-(44, 'Transaction Information', 'Transaction Information'),
-(45, 'Include transaction id and other information correctly', 'Include transaction id and other information correctly'),
-(46, 'Pay Now', 'Pay Now'),
-(47, 'Product Name', 'Product Name'),
-(48, 'Product Details', 'Product Details'),
-(49, 'Categories', 'Categories'),
-(50, 'Category:', 'Category:'),
-(51, 'All Products Under', 'All Products Under'),
-(52, 'Select Size', 'Select Size'),
-(53, 'Select Color', 'Select Color'),
-(54, 'Product Price', 'Product Price'),
-(55, 'Quantity', 'Quantity'),
-(56, 'Out of Stock', 'Out of Stock'),
-(57, 'Share This', 'Share This'),
-(58, 'Share This Product', 'Share This Product'),
-(59, 'Product Description', 'Product Description'),
-(60, 'Features', 'Features'),
-(61, 'Conditions', 'Conditions'),
-(62, 'Return Policy', 'Return Policy'),
-(63, 'Reviews', 'Reviews'),
-(64, 'Review', 'Review'),
-(65, 'Give a Review', 'Give a Review'),
-(66, 'Write your comment (Optional)', 'Write your comment (Optional)'),
-(67, 'Submit Review', 'Submit Review'),
-(68, 'You already have given a rating!', 'You already have given a rating!'),
-(69, 'You must have to login to give a review', 'You must have to login to give a review'),
-(70, 'No description found', 'No description found'),
-(71, 'No feature found', 'No feature found'),
-(72, 'No condition found', 'No condition found'),
-(73, 'No return policy found', 'No return policy found'),
-(74, 'Review not found', 'Review not found'),
-(75, 'Customer Name', 'Customer Name'),
-(76, 'Comment', 'Comment'),
-(77, 'Comments', 'Comments'),
-(78, 'Rating', 'Rating'),
-(79, 'Previous', 'Previous'),
-(80, 'Next', 'Next'),
-(81, 'Sub Total', 'Sub Total'),
-(82, 'Total', 'Total'),
-(83, 'Action', 'Action'),
-(84, 'Shipping Cost', 'Shipping Cost'),
-(85, 'Continue Shopping', 'Continue Shopping'),
-(86, 'Update Billing Address', 'Update Billing Address'),
-(87, 'Update Shipping Address', 'Update Shipping Address'),
-(88, 'Update Billing and Shipping Info', 'Update Billing and Shipping Info'),
+(41, 'Month', 'Tháng'),
+(42, 'Year', 'Năm'),
+(43, 'Send to this Details', 'Gửi tới chi tiết này'),
+(44, 'Transaction Information', 'Thông tin giao dịch'),
+(45, 'Include transaction id and other information correctly', 'Bao gồm ID giao dịch và thông tin khác một cách chính xác'),
+(46, 'Pay Now', 'Thanh toán ngay'),
+(47, 'Product Name', 'Tên sản phẩm'),
+(48, 'Product Details', 'Thông tin chi tiết sản phẩm'),
+(49, 'Categories', 'Thể loại'),
+(50, 'Category:', 'Loại:'),
+(51, 'All Products Under', 'Tất cả sản phẩm dưới'),
+(52, 'Select Size', 'Chọn kích thước'),
+(53, 'Select Color', 'Chọn màu'),
+(54, 'Product Price', 'Giá sản phẩm'),
+(55, 'Quantity', 'Số lượng'),
+(56, 'Out of Stock', 'Hết hàng'),
+(57, 'Share This', 'Chia sẻ cái này'),
+(58, 'Share This Product', 'Chia sẻ sản phẩm này'),
+(59, 'Product Description', 'Mô tả sản phẩm'),
+(60, 'Features', 'Nổi bật'),
+(61, 'Conditions', 'Điều kiện'),
+(62, 'Return Policy', 'Chính sách hoàn trả'),
+(63, 'Reviews', 'Các đánh giá'),
+(64, 'Review', 'Đánh giá'),
+(65, 'Give a Review', 'Đưa ra đánh giá'),
+(66, 'Write your comment (Optional)', 'Viết bình luận của bạn (Tùy chọn)'),
+(67, 'Submit Review', 'Gửi đánh giá'),
+(68, 'You already have given a rating!', 'Bạn đã đưa ra đánh giá rồi!'),
+(69, 'You must have to login to give a review', 'Bạn phải đăng nhập để đưa ra đánh giá'),
+(70, 'No description found', 'Không tìm thấy mô tả'),
+(71, 'No feature found', 'Không tìm thấy tính năng nào'),
+(72, 'No condition found', 'Không tìm thấy điều kiện'),
+(73, 'No return policy found', 'Không tìm thấy chính sách hoàn trả'),
+(74, 'Review not found', 'Không tìm thấy đánh giá nào'),
+(75, 'Customer Name', 'Tên khách hàng'),
+(76, 'Comment', 'Bình luận'),
+(77, 'Comments', 'Cac bình luận'),
+(78, 'Rating', 'Xếp hạng'),
+(79, 'Previous', 'Trước'),
+(80, 'Next', 'Tiếp theo'),
+(81, 'Sub Total', 'Tổng phụ'),
+(82, 'Total', 'Tổng'),
+(83, 'Action', 'Hoạt động'),
+(84, 'Shipping Cost', 'Chi phí vận chuyển'),
+(85, 'Continue Shopping', 'Tiếp tục vận chuyển'),
+(86, 'Update Billing Address', 'Cập nhật địa chỉ thanh toán'),
+(87, 'Update Shipping Address', 'Cập nhật địa chỉ giao hàng'),
+(88, 'Update Billing and Shipping Info', 'Cập nhật thông tin thanh toán và vận chuyển'),
 (89, 'Dashboard', 'Dashboard'),
-(90, 'Welcome to the Dashboard', 'Welcome to the Dashboard'),
-(91, 'Back to Dashboard', 'Back to Dashboard'),
-(92, 'Subscribe', 'Subscribe'),
-(93, 'Subscribe To Our Newsletter', 'Subscribe To Our Newsletter'),
-(94, 'Email Address', 'Email Address'),
-(95, 'Enter Your Email Address', 'Enter Your Email Address'),
-(96, 'Password', 'Password'),
-(97, 'Forget Password', 'Forget Password'),
-(98, 'Retype Password', 'Retype Password'),
-(99, 'Update Password', 'Update Password'),
-(100, 'New Password', 'New Password'),
-(101, 'Retype New Password', 'Retype New Password'),
-(102, 'Full Name', 'Full Name'),
-(103, 'Company Name', 'Company Name'),
-(104, 'Phone Number', 'Phone Number'),
-(105, 'Address', 'Address'),
-(106, 'Country', 'Country'),
-(107, 'City', 'City'),
-(108, 'State', 'State'),
-(109, 'Zip Code', 'Zip Code'),
-(110, 'About Us', 'About Us'),
-(111, 'Featured Posts', 'Featured Posts'),
-(112, 'Popular Posts', 'Popular Posts'),
-(113, 'Recent Posts', 'Recent Posts'),
-(114, 'Contact Information', 'Contact Information'),
-(115, 'Contact Form', 'Contact Form'),
-(116, 'Our Office', 'Our Office'),
-(117, 'Update Profile', 'Update Profile'),
-(118, 'Send Message', 'Send Message'),
-(119, 'Message', 'Message'),
-(120, 'Find Us On Map', 'Find Us On Map'),
-(121, 'Congratulation! Payment is successful.', 'Congratulation! Payment is successful.'),
-(122, 'Billing and Shipping Information is updated successfully.', 'Billing and Shipping Information is updated successfully.'),
-(123, 'Customer Name can not be empty.', 'Customer Name can not be empty.'),
-(124, 'Phone Number can not be empty.', 'Phone Number can not be empty.'),
-(125, 'Address can not be empty.', 'Address can not be empty.'),
-(126, 'You must have to select a country.', 'You must have to select a country.'),
-(127, 'City can not be empty.', 'City can not be empty.'),
-(128, 'State can not be empty.', 'State can not be empty.'),
-(129, 'Zip Code can not be empty.', 'Zip Code can not be empty.'),
-(130, 'Profile Information is updated successfully.', 'Profile Information is updated successfully.'),
-(131, 'Email Address can not be empty', 'Email Address can not be empty'),
-(132, 'Email and/or Password can not be empty.', 'Email and/or Password can not be empty.'),
-(133, 'Email Address does not match.', 'Email Address does not match.'),
-(134, 'Email address must be valid.', 'Email address must be valid.'),
-(135, 'You email address is not found in our system.', 'You email address is not found in our system.'),
-(136, 'Please check your email and confirm your subscription.', 'Please check your email and confirm your subscription.'),
-(137, 'Your email is verified successfully. You can now login to our website.', 'Your email is verified successfully. You can now login to our website.'),
-(138, 'Password can not be empty.', 'Password can not be empty.'),
-(139, 'Passwords do not match.', 'Passwords do not match.'),
-(140, 'Please enter new and retype passwords.', 'Please enter new and retype passwords.'),
-(141, 'Password is updated successfully.', 'Password is updated successfully.'),
-(142, 'To reset your password, please click on the link below.', 'To reset your password, please click on the link below.'),
-(143, 'PASSWORD RESET REQUEST - YOUR WEBSITE.COM', 'PASSWORD RESET REQUEST - YOUR WEBSITE.COM'),
-(144, 'The password reset email time (24 hours) has expired. Please again try to reset your password.', 'The password reset email time (24 hours) has expired. Please again try to reset your password.'),
-(145, 'A confirmation link is sent to your email address. You will get the password reset information in there.', 'A confirmation link is sent to your email address. You will get the password reset information in there.'),
-(146, 'Password is reset successfully. You can now login.', 'Password is reset successfully. You can now login.'),
-(147, 'Email Address Already Exists', 'Email Address Already Exists.'),
-(148, 'Sorry! Your account is inactive. Please contact to the administrator.', 'Sorry! Your account is inactive. Please contact to the administrator.'),
-(149, 'Change Password', 'Change Password'),
-(150, 'Registration Email Confirmation for YOUR WEBSITE', 'Registration Email Confirmation for YOUR WEBSITE.'),
-(151, 'Thank you for your registration! Your account has been created. To active your account click on the link below:', 'Thank you for your registration! Your account has been created. To active your account click on the link below:'),
-(152, 'Your registration is completed. Please check your email address to follow the process to confirm your registration.', 'Your registration is completed. Please check your email address to follow the process to confirm your registration.'),
-(153, 'No Product Found', 'No Product Found'),
-(154, 'Add to Cart', 'Add to Cart'),
-(155, 'Related Products', 'Related Products'),
-(156, 'See all related products from below', 'See all the related products from below'),
-(157, 'Size', 'Size'),
-(158, 'Color', 'Color'),
-(159, 'Price', 'Price'),
-(160, 'Please login as customer to checkout', 'Please login as customer to checkout'),
-(161, 'Billing Address', 'Billing Address'),
-(162, 'Shipping Address', 'Shipping Address'),
-(163, 'Rating is Submitted Successfully!', 'Rating is Submitted Successfully!');
+(90, 'Welcome to the Dashboard', 'Chào mừng bạn đến với Dashboard'),
+(91, 'Back to Dashboard', 'Quay lại Dashboard'),
+(92, 'Subscribe', 'Theo dõi'),
+(93, 'Subscribe To Our Newsletter', 'Theo dõi bản tin của chúng tôi'),
+(94, 'Email Address', 'Email'),
+(95, 'Enter Your Email Address', 'Nhập địa chỉ email của bạn'),
+(96, 'Password', 'Mật khẩu'),
+(97, 'Forget Password', 'Quên mật khẩu'),
+(98, 'Retype Password', 'Nhập lại mật khẩu'),
+(99, 'Update Password', 'Cập nhật mật khẩu'),
+(100, 'New Password', 'Mật khẩu mới'),
+(101, 'Retype New Password', 'Nhập lại mật khẩu mới'),
+(102, 'Full Name', 'Họ và tên'),
+(103, 'Company Name', 'Tên công ty'),
+(104, 'Phone Number', 'Số điện thoại'),
+(105, 'Address', 'Địa chỉ'),
+(106, 'Country', 'Thành phố'),
+(107, 'City', 'Quận/Huyện'),
+(108, 'State', 'Tình trạng'),
+(109, 'Zip Code', 'Mã bưu chính(Zip code)'),
+(110, 'About Us', 'Về chúng tôi'),
+(111, 'Featured Posts', 'Các bài viết'),
+(112, 'Popular Posts', 'Bài viết phổ biến'),
+(113, 'Recent Posts', 'Bài viết gần đây'),
+(114, 'Contact Information', 'Thông tin liên lạc'),
+(115, 'Contact Form', 'Mẫu liên hệ'),
+(116, 'Our Office', 'Văn phòng của chúng tôi'),
+(117, 'Update Profile', 'Cập nhật hồ sơ'),
+(118, 'Send Message', 'Gửi tin nhắn'),
+(119, 'Message', 'Tin nhắn'),
+(120, 'Find Us On Map', 'Tìm chúng tôi trên bản đồ'),
+(121, 'Congratulation! Payment is successful.', 'Xin chúc mừng! Thanh toán thành công.'),
+(122, 'Billing and Shipping Information is updated successfully.', 'Thông tin thanh toán và vận chuyển được cập nhật thành công.'),
+(123, 'Customer Name can not be empty.', 'Tên khách hàng không được để trống.'),
+(124, 'Phone Number can not be empty.', 'Số điện thoại không được để trống.'),
+(125, 'Address can not be empty.', 'Địa chỉ không được để trống.'),
+(126, 'You must have to select a country.', 'Bạn phải chọn một thành phố.'),
+(127, 'City can not be empty.', 'Thành phố không được để trống.'),
+(128, 'State can not be empty.', 'Tình trạng không được để trống.'),
+(129, 'Zip Code can not be empty.', 'Mã bưu chính không được để trống.'),
+(130, 'Profile Information is updated successfully.', 'Thông tin hồ sơ được cập nhật thành công.'),
+(131, 'Email Address can not be empty', 'Email không được để trống.'),
+(132, 'Email and/or Password can not be empty.', 'Email và/hoặc mật khẩu không được để trống.'),
+(133, 'Email Address does not match.', 'Email không trùng khớp.'),
+(134, 'Email address must be valid.', 'Email phải hợp lệ.'),
+(135, 'You email address is not found in our system.', 'Email của bạn không được tìm thấy trong hệ thống của chúng tôi.'),
+(136, 'Please check your email and confirm your subscription.', 'Vui lòng kiểm tra email của bạn và xác nhận đăng ký của bạn.'),
+(137, 'Your email is verified successfully. You can now login to our website.', 'Email của bạn đã được xác minh thành công. Bây giờ bạn có thể đăng nhập vào trang web của chúng tôi'),
+(138, 'Password can not be empty.', 'Mật khẩu không được để trống.'),
+(139, 'Passwords do not match.', 'Mật khẩu không trùng khớp.'),
+(140, 'Please enter new and retype passwords.', 'Vui lòng nhập mật khẩu mới và nhập lại.'),
+(141, 'Password is updated successfully.', 'Mật khẩu được cập nhật thành công.'),
+(142, 'To reset your password, please click on the link below.', 'Để đặt lại mật khẩu của bạn, vui lòng nhấp vào liên kết bên dưới.'),
+(143, 'PASSWORD RESET REQUEST - YOUR WEBSITE.COM', 'YÊU CẦU THIẾT LẬP MẬT KHẨU - WEBSITE.COM CỦA BẠN'),
+(144, 'The password reset email time (24 hours) has expired. Please again try to reset your password.', 'Thời gian email đặt lại mật khẩu (24 giờ) đã hết hạn. Vui lòng thử đặt lại mật khẩu của bạn một lần nữa.'),
+(145, 'A confirmation link is sent to your email address. You will get the password reset information in there.', 'Một liên kết xác nhận được gửi đến địa chỉ email của bạn. Bạn sẽ nhận được thông tin đặt lại mật khẩu trong đó.'),
+(146, 'Password is reset successfully. You can now login.', 'Mật khẩu được đặt lại thành công. Bây giờ bạn có thể đăng nhập.'),
+(147, 'Email Address Already Exists', 'Email đã tồn tại.'),
+(148, 'Sorry! Your account is inactive. Please contact to the administrator.', 'Rất tiếc! Tài khoản của bạn không hoạt động. Vui lòng liên hệ với quản trị viên.'),
+(149, 'Change Password', 'Đổi mật khẩu'),
+(150, 'Registration Email Confirmation for YOUR WEBSITE', 'Xác nhận email đăng ký cho TRANG WEB CỦA BẠN.'),
+(151, 'Thank you for your registration! Your account has been created. To active your account click on the link below:', 'Xác nhận email đăng ký cho TRANG WEB CỦA BẠN:'),
+(152, 'Your registration is completed. Please check your email address to follow the process to confirm your registration.', 'Đăng ký của bạn đã hoàn tất. Vui lòng kiểm tra địa chỉ email của bạn để làm theo quy trình xác nhận đăng ký của bạn.'),
+(153, 'No Product Found', 'Không tìm thấy sản phẩm'),
+(154, 'Add to Cart', 'Thêm vào giỏ hàng'),
+(155, 'Related Products', 'Những sảm phẩm tương tự'),
+(156, 'See all related products from below', 'Xem tất cả các sản phẩm liên quan từ bên dưới'),
+(157, 'Size', 'Kích thước'),
+(158, 'Color', 'Màu'),
+(159, 'Price', 'Giá'),
+(160, 'Please login as customer to checkout', 'Vui lòng đăng nhập với tư cách khách hàng để thanh toán'),
+(161, 'Billing Address', 'Địa chỉ thanh toán'),
+(162, 'Shipping Address', 'Địa chỉ giao hàng'),
+(163, 'Rating is Submitted Successfully!', 'Đánh giá đã được gửi thành công!');
 
 -- --------------------------------------------------------
 
@@ -806,7 +813,7 @@ CREATE TABLE `tbl_page` (
 --
 
 INSERT INTO `tbl_page` (`id`, `about_title`, `about_content`, `about_banner`, `about_meta_title`, `about_meta_keyword`, `about_meta_description`, `faq_title`, `faq_banner`, `faq_meta_title`, `faq_meta_keyword`, `faq_meta_description`, `blog_title`, `blog_banner`, `blog_meta_title`, `blog_meta_keyword`, `blog_meta_description`, `contact_title`, `contact_banner`, `contact_meta_title`, `contact_meta_keyword`, `contact_meta_description`, `pgallery_title`, `pgallery_banner`, `pgallery_meta_title`, `pgallery_meta_keyword`, `pgallery_meta_description`, `vgallery_title`, `vgallery_banner`, `vgallery_meta_title`, `vgallery_meta_keyword`, `vgallery_meta_description`) VALUES
-(1, 'Về chúng tôi', '<p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Welcome to Ecommerce PHP Project!</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\"><span style=\"border: 0px solid;\">We aim to offer our customers a variety of the latest [PRODUCTS_CATEGORY_NAME]. Weâ€™ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget-friendly products. We offer all of this while providing excellent customer service and friendly support.</span></p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\"><span style=\"border: 0px solid;\">We always keep an eye on the latest trends in [PRODUCTS CATEGORY NAME] and put our customersâ€™ wishes first. That is why we have satisfied customers all over the world, and are thrilled to be a part of the [PRODUCTS CATEGORY NAME] industry.</span></p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\"><span style=\"border: 0px solid;\">The interests of our customers are always top priority for us, so we hope you will enjoy our products as much as we enjoy making them available to you.</span></p><p style=\"\">We make sure you get the best quality outfits with hassle free returns and exchanges policy. We ensure what you see is exactly what you get!</p><ul><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">Low Price Guarantee</span></font></li><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">24/7 Customer Support</span></font></li><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">E-Mail - Text - Call</span></font></li><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">We are here for you 24/7 online and via phone.</span></font></li><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">Sizing & Color</span></font></li><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">Worldwide Shipping</span></font></li><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">Weâ€™d love to expand our business Internationally soon.</span></font></li><li style=\"text-align: justify;\"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">Easy Returns</span></font></li></ul><p style=\"text-align: justify; \"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">Bought an outfit but want to return it? We have a 3 days easy return policy. Please mail us at support@ecommercephp.com for more details.</span></font></p><p style=\"text-align: justify; \"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\"><b>Dream Dresses for Every Occasion</b></span></font></p><p style=\"text-align: justify; \"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">Fashionys.com carries all carefully handpicked by our stylists. If youâ€™re interested in a particular model please mail us we will try our best to offer you the loved dress.</span></font></p><p style=\"text-align: justify; \"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\"><b>Verified Security</b></span></font></p><p style=\"text-align: justify; \"><font face=\"apercu, Arial, sans-serif\"><span style=\"font-size: 14px;\">All our transactions are Verified by Norton and with the highest standards of security. Plus, there\'s a lot to go around too through regular exciting offers and gifts, so spread the word and refer us to everyone from your family, friends and colleagues and get rewarded for it. And to top it all, you can share your user experience by posting reviews. Donâ€™t wait any longer Sign up with us now! start stalking, start buying and start loving and start Introducing the beauty in you.</span></font></p>\r\n', 'about-banner.jpg', 'Ecommerce PHP - About Us', 'about, about us, about fashion, about company, about ecommerce php project', 'Our goal has always been to get the best in you we brought a huge collection whether youâ€™re attending a party, wedding, and all those events that require a WOW dress.', 'FAQ', 'faq-banner.jpg', 'Fashionys.com - FAQ', '', '', 'Blog', 'blog-banner.jpg', 'Ecommerce - Blog', '', '', 'Liên hệ với chúng tôi', 'contact-banner.jpg', 'Fashionys.com - Contact', '', '', 'Photo Gallery', 'pgallery-banner.jpg', 'Ecommerce - Photo Gallery', '', '', 'Video Gallery', 'vgallery-banner.jpg', 'Ecommerce - Video Gallery', '', '');
+(1, 'Về chúng tôi', '<p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Chào mừng bạn đến với Dự án PHP thương mại điện tử bán đồ điện tử!</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Chúng tôi mong muốn cung cấp cho khách hàng của mình nhiều sản phẩm mới nhất. Chúng tôi đã đi một chặng đường dài nên chúng tôi biết chính xác nên đi theo hướng nào khi cung cấp cho bạn những sản phẩm chất lượng cao nhưng phù hợp với túi tiền. Chúng tôi cung cấp tất cả những điều này trong khi cung cấp dịch vụ khách hàng tuyệt vời và hỗ trợ thân thiện.</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Chúng tôi luôn theo dõi các xu hướng mới nhất trong danh mục sản phẩm và đặt mong muốn của khách hàng lên hàng đầu. Đó là lý do tại sao chúng tôi đã làm hài lòng khách hàng.</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Lợi ích của khách hàng luôn là ưu tiên hàng đầu của chúng tôi, vì vậy chúng tôi hy vọng bạn sẽ thích thú với các sản phẩm của chúng tôi cũng như việc chúng tôi thích cung cấp chúng cho bạn.</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Chúng tôi đảm bảo bạn sẽ có được những sản phẩm với chất lượng tốt nhất với chính sách đổi trả và đổi hàng miễn phí. Chúng tôi đảm bảo những gì bạn thấy chính xác là những gì bạn nhận được!</p><ul><li style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Hỗ trợ khách hàng 24/7.</li><li style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Email - Nhắn tin - Gọi điện.</li><li style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Chúng tôi luôn sẵn sàng hỗ trợ bạn 24/7 trực tuyến và qua điện thoại.</li><li style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Giao hàng trên toàn quốc.</li><li style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Chúng tôi mong muốn sớm mở rộng hoạt động kinh doanh của mình ra quốc tế.</li><li style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Trả lại dễ dàng</li></ul><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Mua một bộ trang phục nhưng muốn trả lại? Chúng tôi có chính sách hoàn trả dễ dàng trong 3 ngày. Vui lòng gửi thư cho chúng tôi theo địa chỉ tungct2k2@gmail.com để biết thêm chi tiết.</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Chúng tôi cung cấp tất cả các sản phẩm được chúng tôi lựa chọn cẩn thận. Nếu bạn quan tâm đến một mẫu cụ thể, vui lòng gửi thư cho chúng tôi, chúng tôi sẽ cố gắng hết sức để cung cấp cho bạn.</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Bảo mật đã được xác minh</p><p style=\"border: 0px solid; margin-top: 1.5rem; margin-bottom: 0px;\">Tất cả các giao dịch của chúng tôi đều được Norton xác minh và có tiêu chuẩn bảo mật cao nhất. Ngoài ra, còn có rất nhiều điều thú vị thông qua các ưu đãi và quà tặng thú vị thường xuyên, vì vậy hãy quảng bá và giới thiệu chúng tôi với mọi người trong gia đình, bạn bè và đồng nghiệp của bạn và nhận phần thưởng vì điều đó. Và trên hết, bạn có thể chia sẻ trải nghiệm người dùng của mình bằng cách đăng bài đánh giá. Còn chần chờ gì nữa Hãy đăng ký với chúng tôi ngay bây giờ! bắt đầu rình rập, bắt đầu mua và bắt đầu yêu thương và bắt đầu giới thiệu vẻ đẹp trong bạn.</p>\r\n', 'about-banner.jpg', 'Về chúng tôi', 'về, về chúng tôi, về đồ điện tử, về công ty, về dự án php thương mại điện tử', 'Mục tiêu của chúng tôi luôn là mang lại những điều tốt nhất cho bạn, chúng tôi đã mang đến một bộ sưu tập khổng lồ cho bạn', 'FAQ', 'faq-banner.jpg', 'FAQ', '', '', 'Blog', 'blog-banner.jpg', 'Ecommerce - Blog', '', '', 'Liên hệ', 'contact-banner.jpg', 'Liên hệ', '', '', 'Photo Gallery', 'pgallery-banner.jpg', 'Ecommerce - Photo Gallery', '', '', 'Video Gallery', 'vgallery-banner.jpg', 'Ecommerce - Video Gallery', '', '');
 
 -- --------------------------------------------------------
 
@@ -840,7 +847,7 @@ CREATE TABLE `tbl_payment` (
 INSERT INTO `tbl_payment` (`id`, `customer_id`, `customer_name`, `customer_email`, `payment_date`, `txnid`, `paid_amount`, `card_number`, `card_cvv`, `card_month`, `card_year`, `bank_transaction_info`, `payment_method`, `payment_status`, `shipping_status`, `payment_id`) VALUES
 (51, 2, 'Chad N. Carney', 'chad@mail.com', '2022-03-18 22:48:49', '', 19, '', '', '', '', 'Transaction Id: CA01010158967840\r\nTransaction Date: 3/19/2022\r\nBank: WestView Bank, CA Branch\r\nSender A/C: 102458965WV', 'Bank Deposit', 'Completed', 'Completed', '1647629329'),
 (52, 3, 'Jean Collins', 'jean@mail.com', '2022-03-20 10:49:53', '', 91, '', '', '', '', '', 'PayPal', 'Completed', 'Completed', '1647798593'),
-(54, 6, 'August F. Freels', 'august@mail.com', '2022-03-20 10:59:34', '', 70, '', '', '', '', 'Transaction Id: CA01101198945600\nTransaction Date: 3/20/2022 \nBank: WestView Bank, CA Branch \nSender A/C: 1100047860WV', 'Bank Deposit', 'Completed', 'Pending', '1647799174'),
+(54, 6, 'August F. Freels', 'august@mail.com', '2022-03-20 10:59:34', '', 70, '', '', '', '', 'Transaction Id: CA01101198945600\nTransaction Date: 3/20/2022 \nBank: WestView Bank, CA Branch \nSender A/C: 1100047860WV', 'Bank Deposit', 'Completed', 'Completed', '1647799174'),
 (55, 10, 'Will Williams', 'williams@mail.com', '2022-03-20 11:28:22', '', 149, '', '', '', '', 'Transaction Id: CA01003177945009\r\nTransaction Date: 3/20/2022 \r\nBank: WestView Bank, CA Branch \r\nSender A/C: NQ1011050160WV', 'Bank Deposit', 'Completed', 'Completed', '1647800902');
 
 -- --------------------------------------------------------
@@ -936,7 +943,7 @@ INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `
 (83, 'Men\'s Ultra Cotton T-Shirt, Multipack', '26', '19', 77, 'product-featured-83.jpg', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Solids: 100% Cotton; Sport Grey And Antique Heather: 90% Cotton, 10% Polyester; Safety Colors And Heather: 50% Cotton, 50% Polyester.</span></p><p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Available in 2 packs and a wide array of colors so you can stock up on your favorite.</span></p>', '<p><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\">Style 20020-Multipack; Solids: 100% Cotton.</span><br></p>', '<ul><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block; font-family: Arial;\">Pull On closure</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block; font-family: Arial;\">Machine Wash</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block; font-family: Arial;\">Longer dropped shoulder, straighter armhole, and wider, shorter sleeves</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block; font-family: Arial;\">Double-stitching at the hems to make it built to last</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block; font-family: Arial;\">Thick and hefty fabric</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block; font-family: Arial;\">Tear away tag</span></li></ul>', '<p>This is a sample text for conditions.</p>', '<p><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 3, 0, 1, 21),
 (84, 'Honor X8A 8GB-128GB', '4,999,000', '3,999,000', 26, 'product-featured-84.png', 'A <span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">source for must-have style inspiration from global influencers. Shop limited-edition collections and discover chic wardrobe essentials. Look out for trend inspiration, exclusive brand collaborations, and expert styling tips from those in the know.</span>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">86% Tencel, 14% Elastane</span></p>', '<ul><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Machine Wash</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Staples by The Drop</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">This maxi dress measures 48\"/122 cm long</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Loose-Fit: designed for comfort</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">A subtle twist cutout adds a touch of romance to this minimal one-shoulder flowy maxi dress silhouette, cut from a lightweight Tencel blend ribbed knit. Belt the waist for added shape and a pop of color</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\"> in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 13, 1, 1, 32),
 (85, 'Men\'s Soft Classic Sneaker', '110', '91', 32, 'product-featured-85.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">Brings a formal leather finish to a laidback silhouette in a shoe that delivers equally on quality and comfort The metal eyelets and contrasting heel patch balance out the style\'s sleek uniformity Wear yours with jeans an Oxford shirt and a blazer.</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Synthetic sole, Secure fit.</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Crafted in either hand-finished crust leather or brushed nubuck made in our own tanneries</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Textile lining and molded removable insole offer softness and breathability</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Lightweight sole provides cushioning grip and flexibility using innovative ECCO FluidForm Direct Comfort Technology</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Textile laces are easily adjusted for a secure fit</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">A full anatomical last shape provides a supremely comfortable fit</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 5, 0, 1, 25),
-(86, 'Amazfit GTS 3 Smart Watch for Android iPhone', '4,557,000', '179', 32, 'product-featured-86.jpg', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\">Amazfit GTS 3 is the most powerful, easy-to-use smartwatch that combining cutting-edge health & fitness features and a fashionable slim & light design. The smartwatch adopts a 1.75-inch ultra HD AMOLED display which has increased by 14% compared with the previous generation and boasts a 72.4% screen-to-body ratio that\'s among the highest in the smartwatch industry. Match your mood, an outfit or the occasion with a wide selection of more than 100 stylish watch faces - or even upload your own photo as the background image for true personalization. Thanks to the advanced 6PD (six photodiodes) BioTrackerâ„¢ PPG 3.0 biometric sensor, GTS 3 can track your heart rate, blood-oxygen saturation, stress level and breathing rate in one single tap of the watch, for a result in as little as 45 seconds. And Its health management features also includes in-depth monitoring of sleep & sleep breathing quality and female cycle tracking. This sports watch is your next-level fitness partner with 150+ sports modes, smart recognition of 8 sports, and a water-resistance grade of 5 ATM. Comes with Alexa built-in and an offline voice assistant to liberate your hands, and supports GPS, GLONASS, Galileo, BDS and QZSS satellite navigation systems to accurately track your route. Super endurance that won\'t let you down, it can last for up to 12 days with typical usage and 20 days with battery saver mode. Compatible with Android 7.0 and above, iOS 12.0 and above device.<br></p>', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\"><span id=\"productTitle\" class=\"a-size-large product-title-word-break\" style=\"text-rendering: optimizelegibility; word-break: break-word; line-height: 32px !important; font-family: Roboto;\">Alexa Built-in, GPS Fitness Sports Watch with 150 Sports Modes, 1.75â€ AMOLED Display, 12-Day Battery Life, Blood Oxygen Heart Rate Tracking</span></p>', '<ul><li>Smart 24H Monitoring of Blood-oxygen Levels</li><li>Monitor Heart Rate All Day & While Swimming</li><li>A Simple Health Overview with PAI Health Assessment</li><li>In-depth Monitoring of Sleep & Sleep Breathing Quality</li><li>Stress Level Monitoring & Measurement</li><li>Female Cycle Tracking</li><li><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\">Alexa Built in</span></li><li><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\">12-Day battery life<br></span><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px; font-weight: 700;\"><br></span><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px; font-weight: 700;\"><br></span><br></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\"> in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 28, 1, 1, 3),
+(86, 'Amazfit GTS 3 Smart Watch for Android iPhone', '4,557,000', '179', 32, 'product-featured-86.jpg', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\">Amazfit GTS 3 is the most powerful, easy-to-use smartwatch that combining cutting-edge health & fitness features and a fashionable slim & light design. The smartwatch adopts a 1.75-inch ultra HD AMOLED display which has increased by 14% compared with the previous generation and boasts a 72.4% screen-to-body ratio that\'s among the highest in the smartwatch industry. Match your mood, an outfit or the occasion with a wide selection of more than 100 stylish watch faces - or even upload your own photo as the background image for true personalization. Thanks to the advanced 6PD (six photodiodes) BioTrackerâ„¢ PPG 3.0 biometric sensor, GTS 3 can track your heart rate, blood-oxygen saturation, stress level and breathing rate in one single tap of the watch, for a result in as little as 45 seconds. And Its health management features also includes in-depth monitoring of sleep & sleep breathing quality and female cycle tracking. This sports watch is your next-level fitness partner with 150+ sports modes, smart recognition of 8 sports, and a water-resistance grade of 5 ATM. Comes with Alexa built-in and an offline voice assistant to liberate your hands, and supports GPS, GLONASS, Galileo, BDS and QZSS satellite navigation systems to accurately track your route. Super endurance that won\'t let you down, it can last for up to 12 days with typical usage and 20 days with battery saver mode. Compatible with Android 7.0 and above, iOS 12.0 and above device.<br></p>', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\"><span id=\"productTitle\" class=\"a-size-large product-title-word-break\" style=\"text-rendering: optimizelegibility; word-break: break-word; line-height: 32px !important; font-family: Roboto;\">Alexa Built-in, GPS Fitness Sports Watch with 150 Sports Modes, 1.75â€ AMOLED Display, 12-Day Battery Life, Blood Oxygen Heart Rate Tracking</span></p>', '<ul><li>Smart 24H Monitoring of Blood-oxygen Levels</li><li>Monitor Heart Rate All Day & While Swimming</li><li>A Simple Health Overview with PAI Health Assessment</li><li>In-depth Monitoring of Sleep & Sleep Breathing Quality</li><li>Stress Level Monitoring & Measurement</li><li>Female Cycle Tracking</li><li><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\">Alexa Built in</span></li><li><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\">12-Day battery life<br></span><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px; font-weight: 700;\"><br></span><span style=\"color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px; font-weight: 700;\"><br></span><br></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\"> in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 34, 1, 1, 3),
 (87, 'Truck Boys Pajamas Toddler Sleepwear Clothes', '59', '37', 68, 'product-featured-87.jpg', '<p style=\"padding: 0px; margin-bottom: 14px; color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><span class=\"a-text-bold\" style=\"\">Airplane Pajamas:</span></p><p style=\"padding: 0px; margin-bottom: 14px; color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\">Wide crew neckline, elastic waistband and stretchable material make them easily skip on/off. Breathable, moisture absorbent material and pants set design help kids to lose heat faster and keep warm in cool day</p><p style=\"padding: 0px; margin-bottom: 14px; color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\">Great set with colorful cartoon pattern, sporty and stylish, suitable for both sleepwear and daily wear, especially for school pajamas day</p>', 'T shirt Pants set for Kids Size 1Y - 14Y', '<p></p><p><ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><ul></ul></ul><ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><ul></ul></ul><ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><ul></ul></ul><ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><ul></ul></ul><ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><ul></ul></ul></p><ul><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">SUPER COZY PAJAMAS SET - Both the top and bottoms are made of 100% natural cotton, extremely soft, comfortable and keep cool in summer</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">ADORABLE PATTERN - Super cool airplane and space cartoon pattern on the top, a lot of little airplane prints on the bottom, boys favorite</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">CONSIDERATE DESIGN - Casual wide neckline, heat-sale label at the collar, relaxed straight legs, allow for unrestricted movement and a better sleep</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">EASY CARE - As the durable and high quality material, simply machine wash or hand wash in mild water</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">SNUGLY FITTED - As the snugly fitted design and shrinkable cotton material, youÂ¡Â¯d better consider one or two bigger size</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 2, 0, 1, 26),
 (88, 'Under Armour Men\'s Sportstyle Left Chest Short Sleeve T-shirt', '108', '83', 59, 'product-featured-88.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">Super-soft, cotton-blend fabric provides all-day comfort.</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Loose:Â Fuller cut for complete comfort.</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Super-soft, cotton-blend fabric provides all-day comfort</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Loose:Â Fuller cut for complete comfort.</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 4, 0, 1, 21),
 (89, 'Men\'s Fleece Jogger Pant', '58', '37', 110, 'product-featured-89.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">A relaxed leg and elastic waistband bring lounge-ready style to this classic casual pant</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">A relaxed leg and elastic, drawstring waistband bring lounge-ready style to this classic casual pant</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Elastic cuffs at ankle and on-seam side pockets</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 1, 0, 1, 18),
@@ -947,7 +954,7 @@ INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `
 (94, 'WD 5TB Elements Portable External Hard Drive HDD', '160', '149', 46, 'product-featured-94.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">Western Digital elements portable hard drives offer reliable, high-capacity storage, fast data transfer rates and universal connectivity with USB 3.0 and USB 2.0 devices to back up your photos, videos and files on the go. The small, lightweight design offers up to 5TB capacity.</span><br></p>', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\"><span id=\"productTitle\" class=\"a-size-large product-title-word-break\" style=\"text-rendering: optimizelegibility; word-break: break-word; line-height: 32px !important;\">USB 3.0, Compatible with PC, Mac, PS4 & Xbox - WDBU6Y0050BBK-WESN</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">USB 3.0 and USB 2.0 Compatibility</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Compatible with PC, Mac, PS4 & Xbox</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Fast Data Transfers, Improve PC Performance</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">High Capacity</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Memory Storage Capacity: 5TB</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 6, 0, 1, 71),
 (95, 'OPPO Reno 8T 5G', '7,567,000', '6,417,000', 53, 'product-featured-95.png', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">The first noise cancelling headphones are back, with world-class quiet, lightweight materials, and proprietary technology for deep, clear sound. Bose QuietComfort 45 headphones arenâ€™t just an icon reborn â€“ theyâ€™re the perfect balance of quiet, comfort, and sound. Plus, everything that made the first around ear headphones an icon is still here. Just refined. Like an updated design with smooth cushions and a clean look. Plush synthetic leather, impact-resistant glass-filled nylon, and cast-metal hinges were all selected for their comfort as well as their durability. Add in minimal clamping force, and youâ€™ll almost forget youâ€™re wearing Bluetooth wireless noise cancelling headphones.</span><br></p>', 'Iconic, Quiet, Comfort and Sound.', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Noise cancelling wireless headphones â€“ The perfect balance of quiet, comfort, and sound. Bose uses tiny mics to measure, compare, and react to outside noise, cancelling it with opposite signals.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">High-fidelity audio â€“ The TriPort acoustic architecture offers depth and fullness. Volume-optimized Active EQ maintains balanced performance at any volume, so bass stays consistent when turned down and the music remains clear when turned up.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Quiet and Aware Modes â€“ Choose Quiet Mode for full noise cancelling, or Aware Mode to bring the outside into the around ear headphones and hear your environment and your music at the same time.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Over ear headphones â€“ These comfortable wireless headphones are suitable for all-day wear. Crafted with plush synthetic leather and impact-resistant nylon, and designed with minimal clamping force, theyâ€™re as luxurious as they are durable.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Up to 24 hours battery life â€“ Enjoy 24 hours of battery life from a single charge. A quick 15-minute charge offers 3 hours when youâ€™re on the go, or plug in the included audio cable to listen for even longer in wired mode.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Around ear headphones charge via USB-C â€“ Headphones charge via the included USB-C cable.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Bluetooth wireless noise cancelling headphones â€“ These headphones are optimized for a strong, reliable Bluetooth connection within 30 feet of the paired device.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Bose Music app â€“ The app walks you through guided setup of your over ear headphones, making it easy to get started. Plus, access adjustable noise cancellation settings, manage your Bluetooth connections, enable shortcuts, and more.</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 12, 1, 1, 62),
 (96, 'Men\'s Loose Fit Heavyweight Long-Sleeve Pocket T-Shirt', '29', '23', 102, 'product-featured-96.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">Since 1889, Carhartt has made durable workwear you can count on as you tackle the toughest jobs. This men\'s long-sleeve t-shirt bears our logo proudly on the chest pocket. It\'s made of heavyweight cotton jersey and cut generously for a roomy fit.</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">100% cotton (fiber content varies by color)</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">100% cotton (fiber content varies by color)</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Rib-knit crewneck and cuffs</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Left-chest pocket with sewn on Carhartt label</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Loose Fit t-shirts are cut larger with a roomier fit in the chest and shoulders</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Loose Fit, previously known as Original Fit, is a label update in name only.&nbsp; Loose and Original size and fit remains the same. Stock may vary in labeling</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Previous Product Name: K126 Workwear Pocket Long-Sleeve T-shirt</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a&nbsp;</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">&nbsp;in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 12, 1, 1, 20),
-(97, 'Laptop Asus TUF Gaming FX506HC-HN144W i5 11400H/8GB/512GB/15.6\"FHD/GeForce RTX 3050 4GB/Win 11', '21,990,000', '17,990,000', 53, 'product-featured-97.png', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">Our t-length party dress has a solid stretch top, full soutache sequin skirt and tie belt that is perfect for any evening event.</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Short-sleeve v-neck midi blue dress</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Sequin detail</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">This style is available in Regular and Plus Size on Amazon.com</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Center back zip</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Joanna Chen design</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Short-sleeve v-neck midi blue dress</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 13, 1, 1, 32),
+(97, 'Laptop Asus TUF Gaming FX506HC-HN144W i5 11400H/8GB/512GB/15.6\"FHD/GeForce RTX 3050 4GB/Win 11', '21,990,000', '17,990,000', 53, 'product-featured-97.png', '<p><span style=\"color: rgb(51, 51, 51); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: small;\">Our t-length party dress has a solid stretch top, full soutache sequin skirt and tie belt that is perfect for any evening event.</span><br></p>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Short-sleeve v-neck midi blue dress</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Sequin detail</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">This style is available in Regular and Plus Size on Amazon.com</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Center back zip</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Joanna Chen design</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Short-sleeve v-neck midi blue dress</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 16, 1, 1, 32),
 (98, 'Women\'s Fuzzy Fleece Lapel Open Front Long Cardigan Coat', '52', '43', 41, 'product-featured-98.jpg', '<h3 class=\"a-spacing-mini\" style=\"padding: 0px; margin-top: 0px; margin-right: 0px; margin-left: 0px; text-rendering: optimizelegibility; font-weight: bold; font-size: 17px; line-height: 1.255; font-family: \"Amazon Ember\", Arial, sans-serif; color: rgb(15, 17, 17); margin-bottom: 6px !important;\">Design Details - Women Fuzzy Winter Teddy Coat</h3><p class=\"a-spacing-base\" style=\"padding: 0px; color: rgb(15, 17, 17); font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px; margin-bottom: 14px !important;\"></p><ul class=\"a-unordered-list a-vertical\" style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Material:</span>Â 85% Cotton + 15% Spandex. This women\'s teddy coat is 100% brand new and high quality!</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Style:</span>Â Causal, Long Sleeves, Knee Length, Fuzzy, Faux Fur, Lapel, Open Front, this women\'s teddy coat can be both chic and warm.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Occasion:</span>Â Spring, Fall, Winter, Work, Date, Vacation, Daily Casual, At Home . This women\'s faux fur coat is suitable for both formal and casual occasions.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">Package include:</span>Â 1 Womens Fuzzy Coat</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">KINDLY NOTE: Different body types may have different fit from the model pictures, please refer to customer review images for more fitting information.</span></span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\"><span class=\"a-text-bold\" style=\"font-weight: 700 !important;\">KINDLY NOTE: this item is designed to be open front and has no button or zipper closure. Please take it into consideration before purchase.</span></span></li></ul>', '<p style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Material:85% Polyester; 15% Spandex. 100% brand new and high quality!</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: \"Amazon Ember\", Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">No closure closure</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Material:85% Polyester; 15% Spandex. 100% brand new and high quality!</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Style: Causal, Long Sleeves, Knee Length, Fuzzy, Faux Fur, Lapel, Open Front</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Occasion: Spring, Fall, Winter, Work, Date, Vacation, Daily Casual, At Home</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">Pair with: This women\'s coat goes perfect with a shirt/sweater & jeans/leggings/palazoo pants underneath and with short boots.</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\" style=\"overflow-wrap: break-word; display: block;\">KINDLY NOTE: Different body types may have different fit from the model pictures, please refer to customer review images for more fitting information.</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers aÂ </span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Â in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 2, 1, 1, 15);
 INSERT INTO `tbl_product` (`p_id`, `p_name`, `p_old_price`, `p_current_price`, `p_qty`, `p_featured_photo`, `p_description`, `p_short_description`, `p_feature`, `p_condition`, `p_return_policy`, `p_total_view`, `p_is_featured`, `p_is_active`, `ecat_id`) VALUES
 (99, 'Oculus Quest 2 - Advanced All-In-One Virtual Reality Headset', '512', '495', 46, 'product-featured-99.jpg', '<p><span style=\"color: rgb(51, 51, 51); font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: small;\">Oculus quest 2 is our most advanced all-in-one VR system yet. Every detail has been engineered to make virtual worlds adapt to your movements, letting you explore awe-inspiring games and experiences with unparalleled freedom. No PC or Console required. Get the most out of each moment with blazing-fast performance and next-generation graphics. Stay focused with a stunning display that features 50% more pixels than the original quest. Or take a break from the action and grab front-row seats to live concerts, exclusive events and more. The redesigned touch controllers feature improved ergonomics and intuitive controls that transport your gestures, motions and actions directly into VR. You can even connect your VR headset to a gaming-compatible computer with an Oculus Link cable to access hundreds of PC VR games and experiences. Quest 2 also lets you bring your friends into the action. With live casting, you can share your VR experience with people around you. Or meet up with friends in virtual worlds to battle in multiplayer competitions or just spend some time together. With Oculus quest 2, there\'s no end in sight to what you can play, create and discover in virtual reality.</span><br></p>', '<p style=\"padding: 0px; margin-top: 0px; text-rendering: optimizelegibility; margin-bottom: 0px !important; line-height: 32px !important;\"><span id=\"productTitle\" class=\"a-size-large product-title-word-break\" style=\"text-rendering: optimizelegibility; word-break: break-word; line-height: 32px !important; font-family: Roboto;\">Advanced All-In-One Virtual Reality Headset</span></p>', '<ul class=\"a-unordered-list a-vertical a-spacing-mini\" style=\"margin-right: 0px; margin-bottom: 0px; margin-left: 18px; color: rgb(15, 17, 17); padding: 0px; font-family: &quot;Amazon Ember&quot;, Arial, sans-serif; font-size: 14px;\"><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Next-level Hardware - Make every move count with a blazing-fast processor and our highest-resolution display</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">All-In-One Gaming - With backward compatibility, you can explore new titles and old favorites in the expansive Quest content library</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Immersive Entertainment - Get the best seat in the house to live concerts, groundbreaking films, exclusive events and more</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Easy Setup - Just open the box, set up with the smartphone app and jump into VR. No PC or console needed. Requires wireless internet access and the Oculus app (free download) to set up device</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Premium Display - Catch every detail with a stunning display that features 50% more pixels than the original Quest</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">Ultimate Control - Redesigned Oculus Touch controllers transport your movements directly into VR with intuitive controls</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">PC VR Compatible - Step into incredible Oculus Rift titles by connecting an Oculus Link cable to a compatible gaming PC. Oculus Link Cable sold separately</span></li><li style=\"list-style: disc; overflow-wrap: break-word; margin: 0px;\"><span class=\"a-list-item\">3D Cinematic Sound - Hear in all directions with built-in speakers that deliver cinematic 3D positional audio</span></li></ul>', '<p><span style=\"color: rgb(51, 51, 51); font-size: 14px;\">This is a sample text for conditions.</span><br></p>', '<p><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">Offers a&nbsp;</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">15 to 30-day window</span><span style=\"margin: 0px; padding: 0px; color: rgb(32, 33, 36); font-family: arial, sans-serif; font-size: 16px;\">&nbsp;in which customers can return a product and ask for a refund. Some businesses extend that period up to 90 days. Regardless of the time frame you choose, ensuring that you actually have a time frame is essential.</span><br></p>', 0, 1, 1, 61),
@@ -1048,7 +1055,6 @@ INSERT INTO `tbl_product_color` (`id`, `color_id`, `p_id`) VALUES
 (263, 6, 99),
 (264, 14, 100),
 (266, 6, 101),
-(272, 2, 102),
 (282, 2, 95),
 (283, 6, 95),
 (284, 2, 84),
@@ -1057,7 +1063,8 @@ INSERT INTO `tbl_product_color` (`id`, `color_id`, `p_id`) VALUES
 (287, 25, 97),
 (288, 2, 86),
 (289, 6, 86),
-(290, 17, 86);
+(290, 17, 86),
+(291, 2, 102);
 
 -- --------------------------------------------------------
 
@@ -1284,12 +1291,6 @@ INSERT INTO `tbl_product_size` (`id`, `size_id`, `p_id`) VALUES
 (438, 5, 100),
 (439, 6, 100),
 (441, 27, 101),
-(472, 42, 102),
-(473, 43, 102),
-(474, 44, 102),
-(475, 45, 102),
-(476, 46, 102),
-(477, 47, 102),
 (482, 27, 95),
 (483, 2, 84),
 (484, 3, 84),
@@ -1309,7 +1310,13 @@ INSERT INTO `tbl_product_size` (`id`, `size_id`, `p_id`) VALUES
 (498, 17, 97),
 (499, 18, 97),
 (500, 19, 97),
-(501, 26, 86);
+(501, 26, 86),
+(502, 42, 102),
+(503, 43, 102),
+(504, 44, 102),
+(505, 45, 102),
+(506, 46, 102),
+(507, 47, 102);
 
 -- --------------------------------------------------------
 
@@ -1562,7 +1569,7 @@ CREATE TABLE `tbl_slider` (
 --
 
 INSERT INTO `tbl_slider` (`id`, `photo`, `heading`, `content`, `button_text`, `button_url`, `position`) VALUES
-(4, 'slider-4.png', 'Chào mừng bạn đã đến cửa hàng của chúng tôi', 'Mua sắm trực tuyến các phụ kiện mới nhất', 'Xem phụ kiện', 'product-category.php?id=4&type=mid-category', 'Center'),
+(4, 'slider-4.png', 'Chào mừng bạn đã đến cửa hàng của chúng tôi', 'Mua sắm trực tuyến các sản phẩm mới nhất', 'Xem sản phẩm', 'product-category.php?id=4&type=mid-category', 'Center'),
 (5, 'slider-5.jpg', 'Giảm giá 50% cho tất cả sản phẩm', 'Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.', 'Read More', '#', 'Center'),
 (6, 'slider-6.png', 'Hỗ trợ khách hàng 24 giờ', 'Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has.', 'Read More', '#', 'Center');
 
@@ -1901,7 +1908,7 @@ ALTER TABLE `tbl_customer`
 -- AUTO_INCREMENT cho bảng `tbl_customer_message`
 --
 ALTER TABLE `tbl_customer_message`
-  MODIFY `customer_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `customer_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_end_category`
@@ -1931,7 +1938,7 @@ ALTER TABLE `tbl_mid_category`
 -- AUTO_INCREMENT cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_page`
@@ -1943,7 +1950,7 @@ ALTER TABLE `tbl_page`
 -- AUTO_INCREMENT cho bảng `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_photo`
@@ -1967,7 +1974,7 @@ ALTER TABLE `tbl_product`
 -- AUTO_INCREMENT cho bảng `tbl_product_color`
 --
 ALTER TABLE `tbl_product_color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=292;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_product_photo`
@@ -1979,7 +1986,7 @@ ALTER TABLE `tbl_product_photo`
 -- AUTO_INCREMENT cho bảng `tbl_product_size`
 --
 ALTER TABLE `tbl_product_size`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=502;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=508;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_rating`

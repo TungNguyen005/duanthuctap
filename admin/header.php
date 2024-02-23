@@ -158,7 +158,7 @@ if(!isset($_SESSION['user'])) {
 
 						<li class="treeview <?php if( ($cur_page == 'customer.php') || ($cur_page == 'customer-add.php') || ($cur_page == 'customer-edit.php') ) {echo 'active';} ?>">
 			          <a href="customer.php">
-			            <i class="fa fa-user-plus"></i> <span>Khách hàng đã đăng ký</span>
+			            <i class="fa fa-user-plus"></i> <span>Quản lý khách hàng</span>
 			          </a>
 			        </li>
 

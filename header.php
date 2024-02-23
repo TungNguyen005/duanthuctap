@@ -300,7 +300,7 @@ foreach ($result as $row) {
 					}
 					?>
 
-					<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> <?php echo LANG_VALUE_18; ?> (<?php echo LANG_VALUE_1; ?><?php
+					<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> <?php echo LANG_VALUE_18; ?> ( <?php
 					if(isset($_SESSION['cart_p_id'])) {
 						$table_total_price = 0;
 						$i=0;
@@ -321,6 +321,7 @@ foreach ($result as $row) {
 						echo $table_total_price;
 					} else {
 						echo '0.00';
+						echo LANG_VALUE_1;
 					}
 					?>)</a></li>
 				</ul>
@@ -345,7 +346,7 @@ foreach ($result as $row) {
 				<div class="menu-container">
 					<div class="menu">
 						<ul>
-							<li><a href="index.php">Home</a></li>
+							<li><a href="index.php">Trang chủ</a></li>
 							
 							<?php
 							$statement = $pdo->prepare("SELECT * FROM tbl_top_category WHERE show_on_menu=1");

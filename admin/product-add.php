@@ -11,12 +11,12 @@ if(isset($_POST['form1'])) {
 
     if(empty($_POST['mcat_id'])) {
         $valid = 0;
-        $error_message .= "Bạn phải chọn danh mục hãng<br>";
+        $error_message .= "Bạn phải chọn danh mục hãng sản phẩm<br>";
     }
 
     if(empty($_POST['ecat_id'])) {
         $valid = 0;
-        $error_message .= "YBạn phải chọn danh mục tên sản phẩm<br>";
+        $error_message .= "Bạn phải chọn danh mục dòng sản phẩm<br>";
     }
 
     if(empty($_POST['p_name'])) {
@@ -218,10 +218,10 @@ if(isset($_POST['form1'])) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Tên sản phẩm<span>*</span></label>
+							<label for="" class="col-sm-3 control-label">Tên dòng sản phẩm<span>*</span></label>
 							<div class="col-sm-4">
 								<select name="ecat_id" class="form-control select2 end-cat">
-									<option value="">Chọn tên sản phẩm</option>
+									<option value="">Chọn dòng sản phẩm</option>
 								</select>
 							</div>
 						</div>
@@ -232,13 +232,13 @@ if(isset($_POST['form1'])) {
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Giá cũ<br><span style="font-size:10px;font-weight:normal;">(VNĐ)</span></label>
+							<label for="" class="col-sm-3 control-label">Giá cũ<br><span style="font-size:10px;font-weight:normal;">(đ)</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_old_price" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Giá hiện tại<span>*</span><br><span style="font-size:10px;font-weight:normal;">(VNĐ)</span></label>
+							<label for="" class="col-sm-3 control-label">Giá hiện tại<span>*</span><br><span style="font-size:10px;font-weight:normal;">(đ)</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_current_price" class="form-control">
 							</div>
@@ -353,7 +353,7 @@ if(isset($_POST['form1'])) {
 							<div class="col-sm-8">
 								<select name="p_is_active" class="form-control" style="width:auto;">
 									<option value="0">Không</option>
-									<option value="1">Không</option>
+									<option value="1">Có</option>
 								</select> 
 							</div>
 						</div>

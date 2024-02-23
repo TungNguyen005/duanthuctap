@@ -231,7 +231,7 @@ foreach ($result as $row) {
                             
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab_1" data-toggle="tab">About Us</a></li>
+                        <li class="active"><a href="#tab_1" data-toggle="tab">Về chúng tôi</a></li>
                         <li><a href="#tab_2" data-toggle="tab">FAQ</a></li>
                         <li><a href="#tab_4" data-toggle="tab">Liên hệ</a></li>
 
@@ -310,7 +310,7 @@ foreach ($result as $row) {
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Banner đang có/label>
+                                        <label for="" class="col-sm-3 control-label">Banner đang có</label>
                                         <div class="col-sm-6" style="padding-top:6px;">
                                             <img src="../assets/uploads/<?php echo $faq_banner; ?>" class="existing-photo" style="height:80px;">
                                         </div>
